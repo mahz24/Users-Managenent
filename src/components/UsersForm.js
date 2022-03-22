@@ -89,7 +89,12 @@ const UsersForm = ({ addUser, userEdit, getUser }) => {
         <input id="birthday" type="date" {...register("birthday")}></input>
       </div>
       {/* boton */}
-      <button className="myBtn">{userEdit ? "actualizar" : "Añadir"}</button>
+      {/* <button className="myBtn">{userEdit ? "actualizar" : "Añadir"}</button> */}
+      {userEdit ? (
+        <button className="myBtn">Actualizar</button>
+      ) : (
+        <button className="myBtn"> Añadir </button>
+      )}
     </form>
   );
 };
