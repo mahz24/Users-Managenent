@@ -13,7 +13,7 @@ const UsersForm = ({ addUser, userEdit, getUser }) => {
       setValue("password", userEdit.password);
       setValue("birthday", userEdit.birthday);
     }
-  }, [userEdit]);
+  }, [setValue, userEdit]);
 
   const submit = (data) => {
     if (userEdit) {
@@ -89,12 +89,7 @@ const UsersForm = ({ addUser, userEdit, getUser }) => {
         <input id="birthday" type="date" {...register("birthday")}></input>
       </div>
       {/* boton */}
-      {/* <button className="myBtn">{userEdit ? "actualizar" : "Añadir"}</button> */}
-      {userEdit ? (
-        <button className="myBtn">Actualizar</button>
-      ) : (
-        <button className="myBtn"> Añadir </button>
-      )}
+      <button className="myBtn">{userEdit ? "actualizar" : "Añadir"}</button>
     </form>
   );
 };
